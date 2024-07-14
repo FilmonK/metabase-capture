@@ -42,11 +42,19 @@ Metabase folder:
 - Dockerfile has a command to copy the log4j2.xml file, as well as set JAVA environment variables
 - log4j2.xml file which can be adjusted to desired level of logging
 
+Nginx folder:
+- There are baseline configurations for permissions handled by the Dockerfile and entrypoint.sh
+- nginx.conf file is setup to listen on port 8090 for Metabase running on port 5050
+- There's a "proxy_set_header X-Request-ID $request_id" to assign an unique id to each call
 
+Main docker-compose.yml:
+- All the services should be running on the same network ("app-network")
+- Postgres is running on 5452 in the container
+- Metabase is running on 5050 in the container
+- Loki is running on 9080
+- Grafana is running on 3000
 
 
 ## Room for Improvement
-Room for improvement:
-
 - SQL engine agnostic 
 
