@@ -1,0 +1,37 @@
+server:
+  http_listen_port: 9080
+  grpc_listen_port: 0
+
+positions:
+  filename: /tmp/positions.yaml
+
+clients:
+  - url: http://loki:3100/loki/api/v1/push
+    batchwait: 5s
+    batchsize: 1048576
+    timeout: 30s  #  timeout for manage large log files
+
+scrape_configs:
+  - job_name: system
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: varlogs
+          __path__: /var/log/*log
+
+  - job_name: postgres-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: postgres-logs
+          __path__: /var/log/postgresql/postgresql.log
+
+  - job_name: metabase-logs
+    static_configs:
+      - targets:
+          - localhost
+        labels:
+          job: metabase-logs
+          __path__: /path/to/metabase/logs/metabase.log
