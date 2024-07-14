@@ -21,8 +21,8 @@ This is simply a baseline environment and no reason other reverse proxies and SQ
 
 
 ## Screenshots
-![alt text](https://github.com/FilmonK/leasingm/blob/master/readme_images/grafana1.png?raw=true)
-![alt text](https://github.com/FilmonK/leasingm/blob/master/readme_images/grafana2.png?raw=true)
+![alt text](https://github.com/FilmonK/metabase-capture/blob/master/readme_images/grafana1.png?raw=true)
+![alt text](https://github.com/FilmonK/metabase-capture/blob/master/readme_images/grafana2.png?raw=true)
 
 
 ## Room for Improvement
